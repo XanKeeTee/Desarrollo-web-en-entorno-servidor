@@ -47,5 +47,6 @@ rango adecuado de valores permitidos (sea entera y entre 1 y 10) -->
     } else {
         echo "La nota no es válida. Debe ser un número entero entre 1 y 10.";
     }
+?>
 </body>
 </html>
