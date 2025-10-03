@@ -8,7 +8,7 @@
 <body>
     <h1><u>Ejercicio 14</u></h1>
     <!-- 14- Haz un programa PHP que calcule la suma de los n primeros números
-    naturales (siendo n entero y positivo)-->
+    naturales-->
     <?php
         $n = 10;
         $suma = 0;

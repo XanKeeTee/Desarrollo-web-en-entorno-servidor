@@ -8,7 +8,7 @@
 <body>
     <h1><u>Ejercicio 18</u></h1>
     <!-- 18- Haz un programa en PHP que calcule el máximo común divisor de dos
-    números naturales utilizando el algoritmo de Euclides(EN PHP SIN FORMUARIOS DE HTML)-->    
+    números naturales utilizando el algoritmo de Euclides-->    
     <h3>Máximo Común Divisor (MCD) usando el Algoritmo de Euclides</h3>
     <?php
         function mcd($a, $b) {
@@ -20,9 +20,8 @@
             return $a;
         }
 
-        // Ejemplo de uso
-        $num1 = 48; // Primer número natural
-        $num2 = 18; // Segundo número natural
+        $num1 = 48;
+        $num2 = 18;
 
         $resultado = mcd($num1, $num2);
         echo "El máximo común divisor de $num1 y $num2 es: " . $resultado;

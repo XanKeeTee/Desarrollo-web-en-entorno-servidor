@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1><u>Ejercicio 15</u></h1>
-    <!-- 15- Haz un programa php que te diga si un número entero y positivo es primo o no (Sin formulario)-->
+    <!-- 15- Haz un programa php que te diga si un número entero y positivo es primo o no -->
 
     <?php
         $numero = 29;
