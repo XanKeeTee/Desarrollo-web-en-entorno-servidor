@@ -13,6 +13,6 @@
     +,-,*,/,%. Probaremos el envío mediante los métodos GET y POST y
     apreciaremos las diferencias.(El php en el mismo documento, lo mas sencillo posible y facil de leer)Que el resultado se vea cuando le des a calcular
     -->
-    
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 </body>
 </html>
