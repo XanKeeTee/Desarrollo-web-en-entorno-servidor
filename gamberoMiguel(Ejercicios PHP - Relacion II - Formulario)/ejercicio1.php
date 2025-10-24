@@ -10,7 +10,6 @@
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous"
         />
-        <!-- Usamos solo utilidades de Bootstrap; no CSS personalizado -->
     </head>
     <body class="bg-light">
         <div class="container">
@@ -21,9 +20,9 @@
                             </div>
 
                             <div class="card-body p-3">
-                                        <form action="" method="post" class="row g-3">
+                                        <form action="" method="post" class="row g-3" id="calculadoraForm" onsubmit="return validarFormulario()">
                                             <div class="col-12">
-                                                <input class="form-control form-control-lg" type="number" name="num1" required step="any" placeholder="Número 1" />
+                                                <input class="form-control form-control-lg" type="number" name="num1" id="num1" required step="any" placeholder="Número 1" />
                                             </div>
 
                                                                             <div class="col-12 d-flex justify-content-center">
@@ -46,12 +45,13 @@
                                                             </div>
 
                                             <div class="col-12">
-                                                <input class="form-control form-control-lg" type="number" name="num2" required step="any" placeholder="Número 2" />
+                                                <input class="form-control form-control-lg" type="number" name="num2" id="num2" required step="any" placeholder="Número 2" />
                                             </div>
 
                                                             <div class="col-12 text-center mt-2">
                                                                 <button type="submit" class="btn btn-primary btn-lg w-100 w-sm-auto">Calcular</button>
                                                             </div>
+                                                            <div id="mensajeError" class="col-12 text-danger" style="display: none;"></div>
                                         </form>
 
                     <?php
@@ -108,5 +108,33 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+        <script>
+            function validarFormulario() {
+                const num1 = document.getElementById('num1').value;
+                const num2 = document.getElementById('num2').value;
+                const operador = document.querySelector('input[name="operador"]:checked').value;
+                const mensajeError = document.getElementById('mensajeError');
+                
+                // Reiniciar mensaje de error
+                mensajeError.style.display = 'none';
+                mensajeError.textContent = '';
+
+                // Validar que los campos no estén vacíos
+                if (num1.trim() === '' || num2.trim() === '') {
+                    mensajeError.textContent = 'Por favor, completa todos los campos';
+                    mensajeError.style.display = 'block';
+                    return false;
+                }
+
+                // Validar división y módulo por cero
+                if ((operador === '/' || operador === '%') && parseFloat(num2) === 0) {
+                    mensajeError.textContent = 'No es posible dividir o calcular el módulo por cero';
+                    mensajeError.style.display = 'block';
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
     </body>
 </html>
