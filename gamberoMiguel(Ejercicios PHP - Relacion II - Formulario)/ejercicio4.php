@@ -15,13 +15,12 @@
             echo "$DIA ";
         };
     ?>
-    
     <br>
     
     <ol class="list-group list-group-numbered">
         <?php  
             foreach($DIASSEMANA as $DIA){
-                echo "<li class=list-group-item>$DIA</li>";
+                echo "<li class=\"list-group-item\">$DIA</li>";
             };
         ?>
     </ol>
