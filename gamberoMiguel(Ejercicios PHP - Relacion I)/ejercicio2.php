@@ -22,10 +22,10 @@ descritas en: https://www.w3schools.com/php/func_string_printf.asp
     $float = 12.6;
     $boolean = true;
     $int = 3;
-    $string = "Hola Mundo!";
+    $string = "Hola Mundo!"; // Creamos todas las variables
 
     var_dump($float,$boolean,$int,$string);
-    printf("<br>Float: %f<br>Booleano: %b<br>Int: %d<br>String: %s",$float,$boolean,$int,$string);
+    printf("<br>Float: %f<br>Booleano: %b<br>Int: %d<br>String: %s",$float,$boolean,$int,$string);//Imprimimos todos las variables
 ?>
 </body>
 </html>
