@@ -26,42 +26,34 @@
                         <input type="number" class="form-control" name="numero" aria-describedby="emailHelp">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
-                            <?php
-                                function esPrimo(int $numero): bool{
-                                    if ($numero < 2) {
-                                        return false;
-                                    }
-
-                                    if ($numero == 2) {
-                                        return true;
-                                    }
-                                    if ($numero % 2 == 0) {
-                                        return false;
-                                    }
-    
-                                    $limite = intval(sqrt($numero));
-
-                                    for ($i = 3; $i <= $limite; $i += 2) {
-                                        if ($numero % $i == 0) {
-                                            return false;
-                                        }
-                                    }
-                                    return true;
-                                }
-                            ?>
-                            <div class="mt-3">
-                                <?php    
-                                    $numero = isset($_POST['numero']) ? $_POST['numero'] : '';
-                                    if (esPrimo($numero)) {
-                                        echo "El número $numero SÍ es primo.";
-                                    } else {
-                                        echo "El número $numero NO es primo.";
-                                    }
-                            ?>
-                            </div>
-                        <?php endif ?>
                     </form>
+                    <div class="mb-3">
+                        <?php
+                            if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+                                $numero = isset($_POST['numero']) ? $_POST['numero'] : '';
+                                function esPrimo($num){
+                                    $esPrimo = true;
+                                    if ($num <= 1) {
+                                        $esPrimo = false;
+                                    } else {
+                                        for ($i = 2; $i <= sqrt($num); $i++) {
+                                            if ($num % $i == 0) {
+                                                $esPrimo = false;
+                                                break;
+                                            }
+                                        }
+                                    return $esPrimo;
+                                    }
+                                }
+
+                                if(esPrimo($numero)){
+                                    echo "El numero es primo";
+                                }else{
+                                    echo "El numero no es primo";
+                                }
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

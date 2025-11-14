@@ -10,22 +10,24 @@
         $numero = 5;
         $factorial = 1;
 
-        if($numero < 0){
-            echo "El número debe ser un entero positivo.";
-        } elseif($numero == 0){
-            echo "El factorial de 0 es 1.";
-        } else {
-            echo "Cálculo del factorial de ".$numero.":<br>";
-            for($i = 1; $i <= $numero; $i++){
-                $factorial *= $i;
-                if($i == 1){
-                    echo $i;
-                } else {
-                    echo " x ".$i;
-                }
+        function calcularFactoriarl($numero,$factorial){
+            $salida = "";
+            
+            if($numero < 0){
+                $salida .= "El número debe ser un entero positivo.";
+            } elseif($numero == 0){
+                $salida .= "El factorial de 0 es 1.";
+            } else {
+                $salida .= "Cálculo del factorial de ".$numero.":<br>";
+                for($i = 1; $i <= $numero; $i++){
+                    $factorial *= $i;
+                    $salida .= ($i == 1) ? $i : " x ".$i;
             }
-            echo " = ".$factorial;
+                $salida .= " = ".$factorial;
+            }
+            return $salida;
         }
+        echo calcularFactoriarl($numero,$factorial);
     ?>
 </body>
 </html>
