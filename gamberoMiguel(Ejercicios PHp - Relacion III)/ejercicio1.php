@@ -29,22 +29,9 @@
                     </form>
                     <div class="mb-3">
                         <?php
+                        require("ejercicio4.php");
                             if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                                 $numero = isset($_POST['numero']) ? $_POST['numero'] : '';
-                                function esPrimo($num){
-                                    $esPrimo = true;
-                                    if ($num <= 1) {
-                                        $esPrimo = false;
-                                    } else {
-                                        for ($i = 2; $i <= sqrt($num); $i++) {
-                                            if ($num % $i == 0) {
-                                                $esPrimo = false;
-                                                break;
-                                            }
-                                        }
-                                    return $esPrimo;
-                                    }
-                                }
 
                                 if(esPrimo($numero)){
                                     echo "El numero es primo";
