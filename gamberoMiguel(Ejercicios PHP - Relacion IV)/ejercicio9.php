@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
 <!doctype html>
 <html lang="en">
 
@@ -40,7 +41,7 @@
                     {
                     }
 
-                    public function __toString()
+                    public function __toString(): string
                     {
                         $output = "<div class='border p-3 mb-3'>";
                         $output .= "<h4>{$this->numeroCuenta}</h4>";
@@ -50,15 +51,15 @@
                         $output .= "</div>";
                         return $output;
                     }
-                    public function depositarDinero(float $dinero)
+                    public function depositarDinero(float $dinero): void
                     {
                         $this->saldo += $dinero;
                         $this->operaciones++;
                     }
 
-                    abstract public function extraerDinero(float $dinero);
+                    abstract public function extraerDinero(float $dinero): void;
 
-                    public function transferirDinero(float $dinero, CuentaBancaria $cuentaDestino)
+                    public function transferirDinero(float $dinero, self $cuentaDestino): void
                     {
                         $saldoAntesExtraccion = $this->saldo;
                         $this->extraerDinero($dinero);
@@ -70,7 +71,7 @@
 
                 class CuentaDebito extends CuentaBancaria
                 {
-                    public function extraerDinero(float $dinero)
+                    public function extraerDinero(float $dinero): void
                     {
                         if ($this->saldo >= $dinero) {
                             $this->saldo -= $dinero;
@@ -91,7 +92,7 @@
                         $this->limiteNegativo = $limite;
                     }
 
-                    public function extraerDinero(float $dinero)
+                    public function extraerDinero(float $dinero): void
                     {
                         if (($this->saldo - $dinero) >= $this->limiteNegativo) {
                             $this->saldo -= $dinero;

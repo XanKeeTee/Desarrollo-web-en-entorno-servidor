@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
 <!doctype html>
 <html lang="en">
 
@@ -36,14 +37,14 @@
                         $this->saldo = 0;
                         $this->operaciones = 0;
                     }
-                    public function __destruct(){}
+                    public function __destruct() {}
 
-                    public function __toString()
+                    public function __toString(): string
                     {
                         $output = "<div class='border p-3 mb-3'>";
                         $output .= "<h4>{$this->numeroCuenta}</h4>";
                         $output .= "<p><strong>Titular: </strong> {$this->nombreTitular}</p>";
-                        $output .= "<p><strong>Saldo: </strong> {$this->saldo}</p>";
+                        $output .= "<p><strong>Saldo: </strong> " . number_format($this->saldo, 2) . " €</p>";
                         $output .= "<p><strong>Operaciones : </strong>{$this->operaciones}</p>";
                         $output .= "</div>";
                         return $output;
@@ -53,12 +54,12 @@
                         $this->operaciones++;
                     }
 
-                    public function extraerDinero(int $dinero){
+                    public function extraerDinero(float $dinero): void {
                         $this->saldo -= $dinero;
                         $this->operaciones++;
                     }
 
-                    public function transferirDinero(int $dinero,cuentaBancaria $cuentaDestino){
+                    public function transferirDinero(float $dinero, self $cuentaDestino): void {
                         $this->extraerDinero($dinero);
                         $cuentaDestino -> depositarDinero($dinero);
                     }

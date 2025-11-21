@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,9 +31,9 @@
                         self::$numeroRest++;
                     }
 
-                    public function __destruct() {}
+                    public function __destruct(){}
 
-                    public function getNombre(): string
+                    public function getNombre():string
                     {
                         return $this->nombre;
                     }

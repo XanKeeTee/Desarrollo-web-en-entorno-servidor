@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -71,12 +72,12 @@
                         echo "</div>";
                     }
 
-                    public function sonIdenticas(BanderaFranjas $otraBandera): bool
+                    public function sonIdenticas(self $otraBandera): bool
                     {
                         return $this->orientacion === $otraBandera->orientacion && $this->colores === $otraBandera->colores;
                     }
 
-                    public function mismasFranjasDiferenteOrientacion(BanderaFranjas $otraBandera): bool
+                    public function mismasFranjasDiferenteOrientacion(self $otraBandera): bool
                     {
                         return $this->orientacion !== $otraBandera->orientacion && $this->colores === $otraBandera->colores;
                     }
