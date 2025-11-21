@@ -1,9 +1,9 @@
 Ejercicios de de PHP - Módulo Desarrollo Web en Entorno Servidor
 IES Playamar - Curso 2025-26
-PHP Roadmap
+<ul>
+<li>Relación 1 - Ejercicios iniciales</li>
+<li>Relación 2 - Formularios, estilo con Bootstrap y validación JS</li>
+<li>Relación 3 - Funciones, recursividad, y uso avanzado de Arrays  </li>
+</ul>
 
-    Relación 1 - Ejercicios iniciales
-    Relación 2 - Formularios, estilo con Bootstrap y validación JS
-        (ejercicio 12 resuelto en repositorio aparte)
-    Relación 3 - Funciones, recursividad, y uso avanzado de Arrays
 
